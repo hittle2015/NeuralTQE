@@ -51,5 +51,5 @@ class DataLoader(object):
 			seq_len = max(len(t) for t in target)
 			target = [ self.vocab.tgt2id(t) + [0]*(seq_len - len(t)) for t in target ]
 			yield input, target, score
-		print (input)
+		#print (input)
  
