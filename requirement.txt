@@ -1,0 +1,6 @@
+# Packages
+1. Miniconda
+2. Scikit-learn
+3. Scipy
+4. Numpy
+5. install the up-to-date PyTorch with `conda install pytorch torchvision -c pytorch`.
