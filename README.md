@@ -13,3 +13,7 @@ If you are running the code with GPU, simply set the ``use_cuda=torch.cuda.is_av
 Download or pretrain monolingual or crosslingual embeddings and have the first line in each file deleted.  Note that pretrained embeddings may be  problematic due to some lines contain empty words or null vectors. 
 
 
+# Run the Code
+To run the code,
+1. configure your parameters in the mtmain.py file.
+2. run  `python mtmain.py'.
