@@ -149,10 +149,16 @@ def test(model, vocab, args):
 	sys.stdout.write('\n%5.3d instances have been test:' %(len(test_preds)))
 	#sys.stdout.write('[Test Performance: MSE ]:\n Usefulness/Transfer: %5.3f; Terminology/Style: %5.3f; Idiomatic Writing: %5.3f; Target Mechanics: %5.3f \n' % (result[0], result[1], result[2], result[3]))
 	#
+	print('[Test Performance: MSE ]:%5.3f' %(result))
 	print("correlation on %s"%('HTER'))
 	#print(test_orgs)
 	#print(test_preds)
 	pr, spr, kt = calc_correl(test_orgs, test_preds)
 
 	print("pr %.3f, spr %.3f, kt %.3f"%(pr, spr, kt))
+	with open(args.result_file, 'w') as otfile:
+		print ('score'+','+'prediction',file=otfile)
+		for org, prd in zip (test_orgs, test_preds):
+			print(str(org)+','+str(prd)+'\n', file=otfile)
+
 	return result.data[0]
